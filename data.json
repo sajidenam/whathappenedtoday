@@ -1,0 +1,58 @@
+{
+  "lastUpdated": "April 16, 2025 – 08:00 AM",
+  "news": {
+    "title": "Top News",
+    "items": [
+      "India: Govt clears new AI guidelines.",
+      "International: Peace talks resume in Europe."
+    ]
+  },
+  "sports": {
+    "title": "Sports Updates",
+    "items": [
+      "IPL: CSK defeats MI by 7 wickets.",
+      "Chess: India bags 2 medals in Asian tournament."
+    ]
+  },
+  "entertainment": {
+    "title": "Entertainment Buzz",
+    "items": [
+      "Rajkummar Rao’s new film *Maidaan* trending on Netflix.",
+      "Oscar shortlist includes 2 Indian documentaries."
+    ]
+  },
+  "markets": {
+    "title": "Market Snapshot",
+    "items": [
+      "Sensex: +245 pts | Nifty: +120",
+      "INR 83.10/USD | Gold ₹68,210"
+    ]
+  },
+  "weather": {
+    "title": "Weather Today",
+    "items": [
+      "Delhi: 36°C, sunny.",
+      "Hyderabad: 34°C, chance of rain 20%."
+    ]
+  },
+  "quote": {
+    "title": "Quote of the Day",
+    "content": "“Be yourself; everyone else is already taken.” – Oscar Wilde"
+  },
+  "fact": {
+    "title": "Quick Fact",
+    "content": "Bananas are berries, but strawberries are not."
+  },
+  "history": {
+    "title": "Today in History",
+    "content": "April 16, 2003 – Launch of Human Genome Project results."
+  },
+  "trends": {
+    "title": "Top Social Trends",
+    "items": [
+      "#IndiaElections",
+      "#CSKvsMI",
+      "#WorldArtDay"
+    ]
+  }
+}
