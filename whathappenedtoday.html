@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>What Happened Today</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: #444;
+    }
+    nav button {
+      background: none;
+      color: white;
+      padding: 15px 20px;
+      border: none;
+      cursor: pointer;
+    }
+    nav button:hover {
+      background: #666;
+    }
+    .content {
+      padding: 20px;
+    }
+    .section {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .card {
+      background: white;
+      margin-bottom: 15px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-top: 0;
+    }
+    #spinner {
+      display: none;
+      text-align: center;
+      padding: 20px;
+    }
+    #timestamp {
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 10px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>What Happened Today</h1>
+    <p>Daily Headlines and Quick Info in One Place</p>
+  </header>
+
+  <div id="timestamp">Loading latest update...</div>
+  <div id="spinner">Loading data... ⏳</div>
+
+  <nav>
+    <button onclick="showSection('news')">News</button>
+    <button onclick="showSection('sports')">Sports</button>
+    <button onclick="showSection('entertainment')">Entertainment</button>
+    <button onclick="showSection('markets')">Market</button>
+    <button onclick="showSection('weather')">Weather</button>
+    <button onclick="showSection('quote')">Quote</button>
+    <button onclick="showSection('fact')">Quick Fact</button>
+    <button onclick="showSection('history')">Today in History</button>
+    <button onclick="showSection('trends')">Social Trends</button>
+  </nav>
+
+  <div class="content" id="mainContent"></div>
+
+  <script>
+    const sections = ["news", "sports", "entertainment", "markets", "weather", "quote", "fact", "history", "trends"];
+
+    function showSection(id) {
+      sections.forEach(sec => {
+        const el = document.getElementById(sec);
+        if (el) el.classList.remove('active');
+      });
+      const target = document.getElementById(id);
+      if (target) target.classList.add('active');
+    }
+
+    async function loadData() {
+      document.getElementById("spinner").style.display = "block";
+      try {
+        const res = await fetch("https://raw.githubusercontent.com/sajidenam/whathappenedtoday/main/data.json");
+        const data = await res.json();
+        document.getElementById("spinner").style.display = "none";
+        document.getElementById("timestamp").innerText = `🕒 Last updated: ${data.lastUpdated}`;
+        renderData(data);
+      } catch (err) {
+        document.getElementById("spinner").innerText = "Failed to load data. Please try again later.";
+      }
+    }
+
+    function renderData(data) {
+      const content = document.getElementById("mainContent");
+      content.innerHTML = "";
+
+      sections.forEach(section => {
+        const sec = document.createElement("div");
+        sec.className = "section card";
+        sec.id = section;
+
+        const heading = document.createElement("h2");
+        heading.innerText = data[section]?.title || section;
+        sec.appendChild(heading);
+
+        if (Array.isArray(data[section]?.items)) {
+          const ul = document.createElement("ul");
+          data[section].items.forEach(item => {
+            const li = document.createElement("li");
+            li.innerHTML = item;
+            ul.appendChild(li);
+          });
+          sec.appendChild(ul);
+        } else if (typeof data[section]?.content === "string") {
+          const p = document.createElement("p");
+          p.innerText = data[section].content;
+          sec.appendChild(p);
+        }
+
+        content.appendChild(sec);
+      });
+
+      showSection("news");
+    }
+
+    loadData();
+  </script>
+
+</body>
+</html>
