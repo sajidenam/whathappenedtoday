@@ -1,58 +1,50 @@
 {
-  "lastUpdated": "April 16, 2025 – 08:00 AM",
+  "lastUpdated": "April 19, 2025 – 07:17 PM",
   "news": {
     "title": "Top News",
-    "items": [
-      "India: Govt clears new AI guidelines.",
-      "International: Peace talks resume in Europe."
-    ]
+    "items": []
   },
   "sports": {
     "title": "Sports Updates",
-    "items": [
-      "IPL: CSK defeats MI by 7 wickets.",
-      "Chess: India bags 2 medals in Asian tournament."
-    ]
+    "items": []
   },
   "entertainment": {
     "title": "Entertainment Buzz",
     "items": [
-      "Rajkummar Rao’s new film *Maidaan* trending on Netflix.",
-      "Oscar shortlist includes 2 Indian documentaries."
-    ]
-  },
-  "markets": {
-    "title": "Market Snapshot",
-    "items": [
-      "Sensex: +245 pts | Nifty: +120",
-      "INR 83.10/USD | Gold ₹68,210"
+      "iHostage — When a gunman enters an Apple Store in the heart of Amsterdam, the police face a delicate challenge ...",
+      "Sinners — Trying to leave their troubled lives behind, twin brothers return to their hometown to start again, ...",
+      "Captain America: Brave New World — After meeting with newly elected U.S. President Thaddeus Ross, Sam finds himself in the middle of an...",
+      "A Working Man — Levon Cade left behind a decorated military career in the black ops to live a simple life working co...",
+      "Mickey 17 — Unlikely hero Mickey Barnes finds himself in the extraordinary circumstance of working for an employ..."
     ]
   },
   "weather": {
     "title": "Weather Today",
     "items": [
-      "Delhi: 36°C, sunny.",
-      "Hyderabad: 34°C, chance of rain 20%."
+      "Delhi: 29.05°C, haze",
+      "Hyderabad: 28.73°C, haze"
     ]
   },
   "quote": {
     "title": "Quote of the Day",
-    "content": "“Be yourself; everyone else is already taken.” – Oscar Wilde"
+    "content": "Could not fetch quote today."
   },
   "fact": {
     "title": "Quick Fact",
-    "content": "Bananas are berries, but strawberries are not."
+    "content": "Could not fetch fact today."
   },
   "history": {
     "title": "Today in History",
-    "content": "April 16, 2003 – Launch of Human Genome Project results."
+    "content": "Could not fetch historical event today."
   },
   "trends": {
     "title": "Top Social Trends",
     "items": [
-      "#IndiaElections",
-      "#CSKvsMI",
-      "#WorldArtDay"
+      "#WhatHappenedToday",
+      "#NewsUpdate",
+      "#India",
+      "#World",
+      "#Inspiration"
     ]
   }
 }
